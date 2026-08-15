@@ -1,0 +1,14 @@
+[Xfce Panel]
+Version=1.0
+Encoding=UTF-8
+Type=X-XFCE-PanelPlugin
+Name=OpenVPN clients counter
+Name[ru]=Счётчик клиентов OpenVPN
+Comment=Shows a counter and a list of lines received over a unix socket
+Comment[ru]=Показывает число и список строк, принятых из unix-сокета
+Icon=network-vpn
+X-XFCE-Module=ovpn-widget
+X-XFCE-Internal=false
+X-XFCE-Unique=false
+X-XFCE-API=2.0
+
