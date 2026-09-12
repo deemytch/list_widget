@@ -266,10 +266,8 @@ static void build_widgets(OvpnPanel *panel){
 }
 
 static void
-on_free_data(XfcePanelPlugin *plugin, OvpnPanel *panel)
-{
+on_free_data(XfcePanelPlugin *plugin, OvpnPanel *panel){
    (void) plugin;
-
     g_source_remove(panel->event_source);
     ovpn_reader_stop(panel->reader);
     ovpn_config_clear(&panel->config);
@@ -278,16 +276,14 @@ on_free_data(XfcePanelPlugin *plugin, OvpnPanel *panel)
 }
 
 static void
-ovpn_construct(XfcePanelPlugin *plugin)
-{
+ovpn_construct(XfcePanelPlugin *plugin){
     OvpnPanel *panel = g_new0(OvpnPanel, 1);
 
     ovpn_log_open();
-
     panel->plugin = plugin;
     panel->count = OVPN_NO_DATA;
     ovpn_config_load(&panel->config);
-
+    xfce_panel_plugin_set_small(plugin, TRUE);
     build_widgets(panel);
     refresh_widget(panel);
 
